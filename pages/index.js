@@ -8,6 +8,7 @@ import dashboard from "../public/dashboard.PNG";
 import karisimbi from "../public/karisimbi.PNG";
 
 import React, { useState } from "react";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const [r, setR] = useState(true);
@@ -425,14 +426,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </main>
-      <footer>
-        <div></div>
-        <div></div>
-      </footer>
+      <Footer />
     </div>
   );
 }
