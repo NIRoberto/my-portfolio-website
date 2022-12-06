@@ -1,6 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
+import { FaFigma, FaHtml5, FaJava, FaNodeJs, FaReact } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
 import profile from "../public/RObert.jpg";
+import hope from "../public/hope.PNG";
+import dashboard from "../public/dashboard.PNG";
+import karisimbi from "../public/karisimbi.PNG";
 
 import React, { useState } from "react";
 
@@ -199,66 +204,162 @@ export default function Home() {
             General skills
           </h2>
         </div>
-        <div className="grid grid-cols-3  place-items-center  gap-4">
-          <div className="flex flex-col px-8 py-6   bg-white shadow-md">
-            <div>  
-            <span>JavaScript</span>
-            <span>1 year, 5 projects</span>
+        <div className="grid grid-cols-3  auto-cols-max place-items-center  gap-4">
+          <div className="flex justify-between px-8 py-4   ">
+            <div className="flex flex-col mr-4 justify-center">
+              <span className="font-semibold text-xl">React,Redux</span>
+              <span className="text-" style={{ fontSize: "10px" }}>
+                1 year, 5 projects
+              </span>
             </div>
             <div>
-            <span></span>
+              <span className="text-center">
+                <FaReact className="text-4xl text-blue-500" />
+              </span>
             </div>
           </div>
-          <div className="flex flex-col px-8 py-6   bg-white shadow-md">
+          <div className="flex  px-8 py-4   ">
+            <div className="flex flex-col mr-4 justify-center">
+              <span className="font-semibold text-xl">JavaScript</span>
+              <span className="text-" style={{ fontSize: "10px" }}>
+                1 year, 5 projects
+              </span>
+            </div>
             <div>
-            <span>JavaScript</span>
-            <span>2 year, 12 projects</span>
+              <span>
+                <IoLogoJavascript className="text-4xl text-yellow-600" />
+              </span>
+            </div>
+          </div>
+          <div className="flex  px-8 py-4   ">
+            <div className="flex flex-col mr-4 justify-center">
+              <span className="font-semibold text-xl">HTML,CSS</span>
+              <span className="text-" style={{ fontSize: "10px" }}>
+                1 year, 5 projects
+              </span>
             </div>
             <div>
-            <span></span>
+              <span>
+                <FaHtml5 className="text-4xl text-blue-500" />
+              </span>
             </div>
           </div>
-          <div className="flex flex-col px-8 py-6   bg-white shadow-md">
+          <div className="flex  px-8 py-4   ">
+            <div className="flex flex-col mr-4 justify-center">
+              <span className="font-semibold text-xl">Java JSP Servelt</span>
+              <span className="text-" style={{ fontSize: "10px" }}>
+                1 year, 5 projects
+              </span>
+            </div>
             <div>
-            <span>Java JSP Servelt</span>
-            <span></span>
+              <span>
+                <FaJava className="text-4xl text-red-500" />
+              </span>
             </div>
-            <span></span>
           </div>
-          <div className="flex flex-col px-8 py-6   bg-white shadow-md">
+          <div className="flex  px-8 py-4   ">
+            <div className="flex flex-col mr-4 justify-center">
+              <span className="font-semibold text-xl">NodeJS</span>
+              <span className="text-" style={{ fontSize: "10px" }}>
+                1 year, 5 projects
+              </span>
+            </div>
             <div>
-              <span>React redux</span>
-              <span>2 year, 12 projects</span>
+              <span>
+                <FaNodeJs className="text-4xl text-green-800" />
+              </span>
             </div>
-            <span></span>
           </div>
-          <div className="flex flex-col px-8 py-6   bg-white shadow-md">
-            <span>Figma (UI,UX DESIGN)</span>
-            <span>2 year, 12 projects</span>
-            <span></span>
+          <div className="flex  px-8 py-4   ">
+            <div className="flex flex-col mr-4 justify-center">
+              <span className="font-semibold text-xl">Figma</span>
+              <span className="text-" style={{ fontSize: "10px" }}>
+                1 year, 5 projects
+              </span>
+            </div>
+            <div>
+              <span>
+                <FaFigma className="text-4xl text-blue-500" />
+              </span>
+            </div>
           </div>
-          <div className="flex flex-col px-8 py-6   bg-white shadow-md">
-            <span>Nodejs</span>
-            <span>2 year, 12 projects</span>
-            <span></span>
+          <div className="flex  px-8 py-4   ">
+            <div className="flex flex-col mr-4 justify-center">
+              <span className="font-semibold text-xl">NodeJS</span>
+              <span className="text-" style={{ fontSize: "10px" }}>
+                1 year, 5 projects
+              </span>
+            </div>
+            <div>
+              <span>
+                <FaNodeJs className="text-4xl text-green-800" />
+              </span>
+            </div>
+          </div>
+          <div className="flex  px-8 py-4   ">
+            <div className="flex flex-col mr-4 justify-center">
+              <span className="font-semibold text-xl">Figma</span>
+              <span className="text-" style={{ fontSize: "10px" }}>
+                1 year, 5 projects
+              </span>
+            </div>
+            <div>
+              <span>
+                <FaFigma className="text-4xl text-blue-500" />
+              </span>
+            </div>
+          </div>
+          <div className="flex  px-8 py-4   ">
+            <div className="flex flex-col mr-4 justify-center">
+              <span className="font-semibold text-xl">NodeJS</span>
+              <span className="text-" style={{ fontSize: "10px" }}>
+                1 year, 5 projects
+              </span>
+            </div>
+            <div>
+              <span>
+                <FaNodeJs className="text-4xl text-green-800" />
+              </span>
+            </div>
+          </div>
+          <div className="flex  px-8 py-4   ">
+            <div className="flex flex-col mr-4 justify-center">
+              <span className="font-semibold text-xl">Figma</span>
+              <span className="text-" style={{ fontSize: "10px" }}>
+                1 year, 5 projects
+              </span>
+            </div>
+            <div>
+              <span>
+                <FaFigma className="text-4xl text-blue-500" />
+              </span>
+            </div>
           </div>
         </div>
-
+        <div>
+          <h2 className="text-4xl m-20 my-20 text-orange-400 ">My Projects</h2>
+        </div>
         <div class="projects">
-          <div>
-            <button>All</button>
-            <button>Webistes</button>
-            <button>Mobile</button>
-            <button>Games</button>
+          <div className="flex m-20">
+            <button className="">All</button>
+            <button className="ml-8">Webistes</button>
+            <button className="ml-8">Mobile</button>
+            <button className="ml-8">Games</button>
           </div>
-          <div class="single">
-            <div class="img">
-              <img src="" alt="project" />
+          <div className="flex bg-white h-full rounded-md shadow-md  mx-20">
+            <div className="basis-2/5 ">
+              <Image
+                className="h-full object-cover"
+                src={dashboard}
+                alt="dashboard  screen shot"
+              ></Image>
             </div>
-            <div>
+            <div className="basis-3/5 px-6 py-8">
               <div>
-                <h2>Webiste admin dashboard</h2>
-                <p>
+                <h2 className="text-2xl  font-semibold">
+                  Webiste admin dashboard
+                </h2>
+                <p className="py-4">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Quaerat eligendi distinctio aliquid odio nostrum architecto
                   sed sequi iusto, hic iure quia, vitae animi tempore eius
@@ -266,14 +367,24 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <h4>Used stack</h4>
-                <div>
-                  <button>React</button>
-                  <button>Redux</button>
-                  <button>Nodejs</button>
-                  <button>Tailwindcss</button>
+                <h4 className="font-semibold">Used stack</h4>
+                <div className="flex my-8">
+                  <button className="bg-white  shadow-md py-2 px-8  rounded-md text-center">
+                    React
+                  </button>
+                  <button className="bg-white  shadow-md py-2 px-8 ml-4 rounded-md text-center">
+                    Redux
+                  </button>
+                  <button className="bg-white  shadow-md py-2 px-8 ml-4 rounded-md text-center">
+                    Nodejs
+                  </button>
+                  <button className="bg-white  shadow-md py-2 px-8 ml-4 rounded-md text-center">
+                    Tailwindcss
+                  </button>
                 </div>
-                <div>lorem.com</div>
+                <div className="text-right  text-blue-600 m-0">
+                  <a href="#">lorem.com</a>
+                </div>
               </div>
             </div>
           </div>
@@ -282,37 +393,30 @@ export default function Home() {
         </div>
 
         <div class="blogs">
-          <h2>Latest post</h2>
-          <div class="listBlog">
-            <div class="single">
-              <div class="img">
-                <img src="/img/andeal.jfif" alt="atlp program image" />
+          <div>
+            <h2 className="text-4xl m-20 my-20 text-orange-400 ">
+              Latest blogs
+            </h2>
+          </div>
+          <div className="flex gap-8 m-20">
+            <div className="bg-white basis-1/3  rounded-md hover:shadow-lg flex flex-col shadow-md">
+              <div className="basis-2/3">
+                <Image
+                  className="h-80  object-cover"
+                  src={karisimbi}
+                  alt="atlp program image"
+                />
               </div>
-              <div class="date">
-                <span>24 dec 2020</span>
-              </div>
-              <div>
-                <a href="#">
-                  <h4>My Journey through ATLP</h4>
-                  <p>
-                    Lorem ipusmLorem ipusmLorem ipusmLorem ipusmLorem ipusmLorem
-                    ipusmLorem ipusmLorem ipusmLorem ipusmLorem ipusm
-                  </p>
-                </a>
-              </div>
-            </div>
-            <div class="single">
-              <div class="single">
-                <div class="img">
-                  <img src="/img/andeal.jfif" alt="atlp program image" />
-                </div>
+              <div className="p-4 basis-1/3 ">
                 <div class="date">
-                  <span>24 dec 2020</span>
+                  <span style={{ fontSize: "10px" }}>24 dec 2020</span>
                 </div>
-                <div>
+                <div className="pb-4">
                   <a href="#">
-                    <h4>My Journey through ATLP</h4>
-                    <p>
+                    <h4 className="font-semibold text-xl my-4">
+                      My Journey through ATLP
+                    </h4>
+                    <p className="text-sm">
                       Lorem ipusmLorem ipusmLorem ipusmLorem ipusmLorem
                       ipusmLorem ipusmLorem ipusmLorem ipusmLorem ipusmLorem
                       ipusm
@@ -321,26 +425,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div class="single">
-              <div class="single">
-                <div class="img">
-                  <img src="/img/andeal.jfif" alt="atlp program image" />
-                </div>
-                <div class="date">
-                  <span>24 dec 2020</span>
-                </div>
-                <div>
-                  <a href="#">
-                    <h4>My Journey through ATLP</h4>
-                    <p>
-                      Lorem ipusmLorem ipusmLorem ipusmLorem ipusmLorem
-                      ipusmLorem ipusmLorem ipusmLorem ipusmLorem ipusmLorem
-                      ipusm
-                    </p>
-                  </a>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </main>
