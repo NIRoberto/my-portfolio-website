@@ -1,0 +1,28 @@
+:root {
+  --main-color: #e97635;
+  --main-white: #ffffff;
+  --main-in-gradient: #e97c3d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: var(--main-color);
+}
+header ul {
+  display: flex;
+  list-style-type: none;
+}
+
+header  ul  li a{
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+}
