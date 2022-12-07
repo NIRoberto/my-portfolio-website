@@ -4,11 +4,11 @@ import { FaFigma, FaHtml5, FaJava, FaNodeJs, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import profile from "../public/RObert.jpg";
 import hope from "../public/hope.PNG";
-import karisimbi from "../public/karisimbi.PNG";
 
 import React, { useState } from "react";
 import Footer from "../components/Footer";
 import Project from "../components/Project";
+import Blog from "../components/Blog";
 
 export default function Home() {
   const [r, setR] = useState(true);
@@ -348,6 +348,8 @@ export default function Home() {
             <button className="ml-8">Games</button>
           </div>
           <Project />
+          <Project />
+          <Project />
           <div class="single"></div>
           <div class="single"></div>
         </div>
@@ -359,32 +361,9 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex gap-8 m-20">
-            <div className="bg-white basis-1/3  rounded-md hover:shadow-lg flex flex-col shadow-md">
-              <div className="basis-2/3">
-                <Image
-                  className="h-80  object-cover"
-                  src={karisimbi}
-                  alt="atlp program image"
-                />
-              </div>
-              <div className="p-4 basis-1/3 ">
-                <div class="date">
-                  <span style={{ fontSize: "10px" }}>24 dec 2020</span>
-                </div>
-                <div className="pb-4">
-                  <a href="#">
-                    <h4 className="font-semibold text-xl my-4">
-                      My Journey through ATLP
-                    </h4>
-                    <p className="text-sm">
-                      Lorem ipusmLorem ipusmLorem ipusmLorem ipusmLorem
-                      ipusmLorem ipusmLorem ipusmLorem ipusmLorem ipusmLorem
-                      ipusm
-                    </p>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <Blog />
+            <Blog />
+            <Blog />
           </div>
         </div>
       </main>

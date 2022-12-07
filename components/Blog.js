@@ -1,0 +1,35 @@
+import React from "react";
+import Image from "next/image";
+import karisimbi from "../public/karisimbi.PNG";
+
+const Blog = () => {
+  return (
+    <div className="bg-white basis-1/3  rounded-md hover:shadow-lg flex flex-col shadow-md">
+      <div className="basis-2/3">
+        <Image
+          className="h-80  object-cover"
+          src={karisimbi}
+          alt="atlp program image"
+        />
+      </div>
+      <div className="p-4 basis-1/3 ">
+        <div class="date">
+          <span style={{ fontSize: "10px" }}>24 dec 2020</span>
+        </div>
+        <div className="pb-4">
+          <a href="#">
+            <h4 className="font-semibold text-xl my-4">
+              My Journey through ATLP
+            </h4>
+            <p className="text-sm">
+              Lorem ipusmLorem ipusmLorem ipusmLorem ipusmLorem ipusmLorem
+              ipusmLorem ipusmLorem ipusmLorem ipusmLorem ipusm
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Blog;

@@ -4,7 +4,7 @@ import dashboard from "../public/dashboard.PNG";
 
 const Project = () => {
   return (
-    <div className="flex bg-white h-full rounded-md shadow-md  mx-20">
+    <div className="flex bg-white h-full gap-8 rounded-md shadow-md  mx-20">
       <div className="basis-2/5 ">
         <Image
           className="h-full object-cover"
