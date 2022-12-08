@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import dashboard from "../public/dashboard.PNG";
+// import dashboard from "../public/dashboard.PNG";
 
 const Project = (data) => {
   const { image, title, description, stack, link } = data.data;
