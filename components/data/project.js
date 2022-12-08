@@ -30,7 +30,7 @@ const project = [
   {
     id: 3,
     image:
-      "https://res.cloudinary.com/nrob/image/upload/v1670505803/karisimbi_ktalvw.png",
+      "https://res.cloudinary.com/nrob/image/upload/v1670505804/dashboard_egbiuh.png",
     title: "Website admin dashboard",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eligendi distinctio aliquid odio nostrum architecto sed sequi iusto, hic iure quia, vitae animi tempore eius pariatur doloribus, debitis et quasi.",
