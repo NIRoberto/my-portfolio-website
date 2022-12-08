@@ -14,6 +14,8 @@ import Skill from "../components/Skill";
 import skills from "../components/data/skills";
 import project from "../components/data/project";
 import blog from "../components/data/blog";
+import Link from "next/link";
+import login from "./login";
 
 export default function Home() {
   const [r, setR] = useState(true);
@@ -90,12 +92,12 @@ export default function Home() {
         </div>
 
         <div>
-          <button
-            id="login"
+          <Link
+            href="/login"
             className="bg-white px-8 py-2 hover:bg-orange-100 hover:text-main text-main outline-none border-none  rounded-md"
           >
             Login
-          </button>
+          </Link>
         </div>
       </header>
       <main className="">
@@ -313,7 +315,7 @@ export default function Home() {
               Latest blogs
             </h2>
           </div>
-          <div className="flex gap-8 m-20">
+          <div className="flex flex-col  md:flex-row gap-8 m-20">
             <Blog data={blog} />
           </div>
         </div>
