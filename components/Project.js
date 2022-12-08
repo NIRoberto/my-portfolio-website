@@ -8,7 +8,7 @@ const Project = (data) => {
     <>
       {data.data.map(({ image, title, description, stack, link }) => {
         return (
-          <div className="flex bg-white h-full gap-8 rounded-md shadow-md  mx-20">
+          <div className="flex  flex-col md:flex-row bg-white h-full gap-8 rounded-md shadow-md  mx-20">
             <div className="basis-2/5 ">
               <Image
                 className="h-full object-cover"
