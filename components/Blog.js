@@ -7,7 +7,7 @@ const Blog = ({ data }) => (
       return (
         <div className="bg-white  basis-4/5 sm:basis-2/5 md:basis-1/3  rounded-md hover:shadow-lg flex flex-col shadow-md">
           <div className="basis-2/3">
-            <Image
+            <img
               className="h-80  object-cover"
               src={image}
               alt="atlp program image"

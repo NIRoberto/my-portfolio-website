@@ -2,18 +2,20 @@ import React from "react";
 import Image from "next/image";
 
 const Project = (data) => {
-  const { image, title, description, stack, link } = data.data;
+  // const { image, title, description, stack, link } = data.data;
   return (
     <>
       {data.data.map(({ image, title, description, stack, link }) => {
         return (
           <div className="flex  flex-col lg:flex-row bg-white h-full gap-8 rounded-md shadow-md  mx-8 md:mx-20">
             <div className="basis-2/5 ">
-              <Image
+              <img
                 className="h-full object-cover"
                 src={image}
+                width={0}
+                height={0}
                 alt="dashboard  screen shot"
-              ></Image>
+              />
             </div>
             <div className="basis-3/5 px-6 py-8">
               <div>
