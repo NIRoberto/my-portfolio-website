@@ -4,9 +4,9 @@ import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-orange-400 p-16 w-full text-white flex  justify-between items-center">
+      <footer className="bg-main p-16 w-full text-white flex  justify-between items-center">
         <div className="basis-3/6   border-r-4  border-white rounded-md  px-8">
-        <h1 className="text-4xl font-semibold py-2  px-4">Get in Touch</h1>
+          <h1 className="text-4xl font-semibold py-2  px-4">Get in Touch</h1>
           <form action="#" className=" p-4">
             {/* <div className="flex px-4 justify-around w-full"> */}
             <div className="flex flex-col">
@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="text-center bg-orange-400 p-4 text-white">
+      <div className="text-center bg-main p-4 text-white">
         <p>Copyright © 2022 All rights reserved | by Robert Niyitanga</p>
       </div>
     </>
