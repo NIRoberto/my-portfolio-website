@@ -1,8 +1,8 @@
-import hope from "../../public/hope.PNG";
+import hope from "/public/hope.PNG";
 
-import karisimbi from "../../public/karisimbi.PNG";
+import karisimbi from "/public/karisimbi.PNG";
 
-import dashboard from "../../public/dashboard.PNG";
+import dashboard from "/public/dashboard.PNG";
 
 const project = [
   {

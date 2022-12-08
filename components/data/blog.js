@@ -1,6 +1,6 @@
 // import andeal from "../../public/andeal.jfif";
-import faster from "../../public/faster.PNG";
-import master from "../../public/master.PNG";
+import faster from "/public/faster.PNG";
+import master from "/public/master.PNG";
 // import master from "../../public/master.PNG";
 
 
