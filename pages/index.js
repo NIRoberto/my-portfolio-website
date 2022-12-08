@@ -4,7 +4,7 @@ import { FaFigma, FaHtml5, FaJava, FaNodeJs, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { FiMenu } from "react-icons/fi";
 import { RxCross1 } from "react-icons/rx";
-import profile from "../public/RObert.jpg";
+import profile from "/public/RObert.jpg";
 
 import React, { useState } from "react";
 import Footer from "../components/Footer";
@@ -15,7 +15,6 @@ import skills from "../components/data/skills";
 import project from "../components/data/project";
 import blog from "../components/data/blog";
 import Link from "next/link";
-import login from "./login";
 
 export default function Home() {
   const [r, setR] = useState(true);
