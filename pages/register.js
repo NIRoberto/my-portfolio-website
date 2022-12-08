@@ -51,14 +51,11 @@ const register = () => {
           </div>
           <div>
             <p className="text-sm">
-              Create account
-              <Link
-                className="text-blue-900  font-semibold px-2"
-                href="/register"
-              >
+              Login
+              <Link className="text-blue-900  font-semibold px-2" href="/login">
                 here
               </Link>
-              if you don't have
+              if you have account
             </p>
           </div>
         </form>

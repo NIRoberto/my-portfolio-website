@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import karisimbi from "../public/karisimbi.PNG";
 
 const Blog = ({ data }) => (
   <>
@@ -10,7 +9,7 @@ const Blog = ({ data }) => (
           <div className="basis-2/3">
             <Image
               className="h-80  object-cover"
-              src={karisimbi}
+              src={image}
               alt="atlp program image"
             />
           </div>
