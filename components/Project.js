@@ -12,8 +12,6 @@ const Project = (data) => {
               <img
                 className="h-full object-cover"
                 src={image}
-                width={0}
-                height={0}
                 alt="dashboard  screen shot"
               />
             </div>
