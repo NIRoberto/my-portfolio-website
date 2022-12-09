@@ -31,6 +31,7 @@ export default function Home() {
       <header
         style={{
           background: " rgb(233,118,53)",
+           
           // background:
           //   "linear-gradient(90deg, rgba(233,118,53,1) 57%, rgba(239,160,126,1) 80%)",
         }}
@@ -106,7 +107,7 @@ export default function Home() {
             // background:
             //   "linear-gradient(90deg, rgba(233,118,53,1) 57%, rgba(239,160,126,1) 80%)",
           }}
-          className="bg-main p-2 pt-8 md:pt-0 md:p-10  flex flex-col  md:flex-row items-center"
+          className="bg-main p-2    md:py-16  flex flex-col  md:flex-row items-center"
         >
           <div className="flex justify-center md:justify-end">
             <Image
@@ -137,7 +138,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="m-10 md:m-20 my-40">
+        <div id="about" className="m-10 md:m-20 my-40">
           <h2 className="text-2xl md:text-4xl text-main  font-semibold">
             About me
           </h2>
@@ -300,7 +301,7 @@ export default function Home() {
             My Projects
           </h2>
         </div>
-        <div class="projects">
+        <div id="portfolio" class="projects">
           <div className="flex text-md  md:text-lg m-20">
             <button className="">All</button>
             <button className="ml-8">Webistes</button>
@@ -312,7 +313,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div class="blogs">
+        <div id="blog" class="blogs">
           <div>
             <h2 className=" text-2xl md:text-4xl m-10 md:m-20 my-20 text-orange-400  font-semibold ">
               Latest blogs

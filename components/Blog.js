@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Blog = ({ data }) => (
   <>
@@ -18,10 +19,10 @@ const Blog = ({ data }) => (
               <span style={{ fontSize: "10px" }}>{date}</span>
             </div>
             <div className="pb-4">
-              <a href="#">
+              <Link href="/singleBlog">
                 <h4 className="font-semibold text-xl my-4">{title}</h4>
                 <p className="text-sm">{description}</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
