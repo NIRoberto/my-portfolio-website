@@ -288,16 +288,20 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <h2 className="text-4xl m-20 my-20 text-main ">General skills</h2>
+          <h2 className="text-2xl md:text-4xl m-10 md:m-20 my-20 text-main font-semibold ">
+            General skills
+          </h2>
         </div>
         <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3  auto-cols-max place-items-center  gap-4">
           <Skill skills={skills} />
         </div>
         <div>
-          <h2 className="text-4xl m-20 my-20 text-orange-400 ">My Projects</h2>
+          <h2 className=" text-2xl md:text-4xl m-20 my-20 text-orange-400  font-semibold">
+            My Projects
+          </h2>
         </div>
         <div class="projects">
-          <div className="flex m-20">
+          <div className="flex text-md  md:text-lg m-20">
             <button className="">All</button>
             <button className="ml-8">Webistes</button>
             <button className="ml-8">Mobile</button>
@@ -310,11 +314,11 @@ export default function Home() {
 
         <div class="blogs">
           <div>
-            <h2 className="text-4xl m-20 my-20 text-orange-400 ">
+            <h2 className=" text-2xl md:text-4xl m-10 md:m-20 my-20 text-orange-400  font-semibold ">
               Latest blogs
             </h2>
           </div>
-          <div className="flex flex-col  md:flex-row gap-8 m-20">
+          <div className="flex flex-col  md:flex-row gap-8  m-10 md:m-20">
             <Blog data={blog} />
           </div>
         </div>

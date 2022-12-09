@@ -5,7 +5,7 @@ const Blog = ({ data }) => (
   <>
     {data.map(({ image, date, description, title }) => {
       return (
-        <div className="bg-white  basis-4/5 sm:basis-2/5 md:basis-1/3  rounded-md hover:shadow-lg flex flex-col shadow-md">
+        <div className="bg-white   basis-11/12 sm:basis-2/5 md:basis-1/3  rounded-md hover:shadow-lg flex flex-col shadow-md">
           <div className="basis-2/3">
             <img
               className="h-80  object-cover"
