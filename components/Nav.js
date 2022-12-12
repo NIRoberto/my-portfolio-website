@@ -20,7 +20,7 @@ const Nav = () => {
       <div className="hidden  md:block">
         <ul className="flex">
           <li className="ml-8">
-            <a href="#home">Home</a>
+            <Link href="/index">Home</Link>
           </li>
           <li className="ml-8">
             <a href="#about">About</a>
@@ -43,7 +43,7 @@ const Nav = () => {
       >
         <ul className="flex flex-col p-8 shadow-2xl w-60 bg-white text-main ">
           <li className="m-8">
-            <a href="#home">Home</a>
+            <Link href="/">Home</Link>
           </li>
           <li className="m-8">
             <a href="#about">About</a>

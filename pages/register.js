@@ -14,7 +14,7 @@ const register = () => {
       >
         <form
           action="#"
-          className="bg-white  p-8  mb-16 md:w-80 flex flex-col shadow-md rounded-sm"
+          className="bg-white  p-8  mb-16 md:w-96 flex flex-col shadow-md rounded-sm"
         >
           <h1 className="text-2xl font-semibold my-8">Create an account</h1>
           <div className="flex-col flex">

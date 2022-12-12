@@ -21,13 +21,13 @@ const singleBlog = () => {
       >
         <div className="hidden  md:block">
           <ul className="flex  ">
-            <li className="ml-8 hover:text-main">
-              <Link href="/home">Home</Link>
+            <li className="ml-8 ">
+              <Link href="/">Home</Link>
             </li>
-            <li className="ml-8 hover:text-main">
+            <li className="ml-8 ">
               <a href="#other">Other blog</a>
             </li>
-            <li className="ml-8 hover:text-main">
+            <li className="ml-8 ">
               <a href="#contact">Contact </a>
             </li>
           </ul>
@@ -39,7 +39,7 @@ const singleBlog = () => {
         >
           <ul className="flex flex-col p-8 shadow-2xl w-60 bg-white text-main ">
             <li className="m-8">
-              <Link href="#home">Home</Link>
+              <Link href="/index">Home</Link>
             </li>
 
             <li className="m-8">
