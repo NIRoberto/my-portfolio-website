@@ -2,6 +2,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import Footer from "../components/Footer";
+import Nav from "../components/Nav";
+import { RxCross1 } from "react-icons/rx";
 
 const singleBlog = () => {
   const [nav, setNav] = useState(true);
@@ -10,28 +12,22 @@ const singleBlog = () => {
     <div>
       <header
         style={{
-          background: " rgb(233,118,53)",
+          background: "",
 
           // background:
           //   "linear-gradient(90deg, rgba(233,118,53,1) 57%, rgba(239,160,126,1) 80%)",
         }}
-        className="flex bg-gradient  relative text-white justify-between p-7"
+        className="flex bg-gradient bg-main  relative text-white justify-between p-7"
       >
         <div className="hidden  md:block">
-          <ul className="flex">
-            <li className="ml-8">
-              <a href="#home">Home</a>
+          <ul className="flex  ">
+            <li className="ml-8 hover:text-main">
+              <Link href="/home">Home</Link>
             </li>
-            <li className="ml-8">
-              <a href="#about">About</a>
+            <li className="ml-8 hover:text-main">
+              <a href="#other">Other blog</a>
             </li>
-            <li className="ml-8">
-              <a href="#portfolio">Portfolio</a>
-            </li>
-            <li className="ml-8">
-              <a href="#blog">Blog</a>
-            </li>
-            <li className="ml-8">
+            <li className="ml-8 hover:text-main">
               <a href="#contact">Contact </a>
             </li>
           </ul>
@@ -43,16 +39,11 @@ const singleBlog = () => {
         >
           <ul className="flex flex-col p-8 shadow-2xl w-60 bg-white text-main ">
             <li className="m-8">
-              <a href="#home">Home</a>
+              <Link href="#home">Home</Link>
             </li>
+
             <li className="m-8">
-              <a href="#about">About</a>
-            </li>
-            <li className="m-8">
-              <a href="#portfolio">Portfolio</a>
-            </li>
-            <li className="m-8">
-              <a href="#blog">Blog</a>
+              <a href="#blog">Other posts</a>
             </li>
             <li className="m-8">
               <a href="#contact">Contact </a>
@@ -74,7 +65,7 @@ const singleBlog = () => {
         <div>
           <Link
             href="/login"
-            className="bg-white px-8 py-2 hover:bg-orange-100 hover:text-main text-main outline-none border-none  rounded-md"
+            className="bg-white text-main px-8 py-2 hover:bg-orange-100 hover:text-main outline-none border-none  rounded-md"
           >
             Login
           </Link>
@@ -82,16 +73,15 @@ const singleBlog = () => {
       </header>
       <div
         style={{
-          background: " rgb(233,118,53)",
+          background: " ",
           // background:
           //   "linear-gradient(90deg, rgba(233,118,53,1) 57%, rgba(239,160,126,1) 80%)",
         }}
         className="bg-main  h-96  md:py-16  flex flex-col  md:flex-row items-center"
       ></div>
-      <div className="flex justify-center">
-        <div className="bg-white w-4/5 -m-60 px-20 py-10 mb-20 shadow-md rounded-md">
+      <div className="flex   justify-center ">
+        <div className="bg-white  w-4/5 -m-60 px-8 md:px-20 py-10 mb-16 shadow-md rounded-md">
           <div>
-            <div className="text-xs">Back</div>
             <div className="text-2xl font-semibold my-4">
               {" "}
               How to learn programming faster.
@@ -143,7 +133,43 @@ const singleBlog = () => {
           </div>
         </div>
       </div>
-      <br />
+      <div className="my-16">
+        <h1 className="ml-8 md:ml-32 pl-1 text-2xl text-main">Other post</h1>
+        <div className="grid m-auto gap-8  grid-cols-1 md:grid-cols-2 w-4/5">
+          <div>
+            <h3 className="font-semibold my-4">My jouney through the ATLP</h3>
+            <p className="text-sm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, quis aliquid! Cum vel cupiditate maxime nostrum quia
+              eaque tempore a?
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold my-4">My jouney through the ATLP</h3>
+            <p className="text-sm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, quis aliquid! Cum vel cupiditate maxime nostrum quia
+              eaque tempore a?
+            </p>
+          </div>{" "}
+          <div>
+            <h3 className="font-semibold my-4">My jouney through the ATLP</h3>
+            <p className="text-sm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, quis aliquid! Cum vel cupiditate maxime nostrum quia
+              eaque tempore a?
+            </p>
+          </div>{" "}
+          <div>
+            <h3 className="font-semibold my-4">My jouney through the ATLP</h3>
+            <p className="text-sm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quibusdam, quis aliquid! Cum vel cupiditate maxime nostrum quia
+              eaque tempore a?
+            </p>
+          </div>
+        </div>
+      </div>
 
       <Footer />
     </div>

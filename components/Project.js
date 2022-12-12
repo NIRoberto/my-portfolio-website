@@ -24,7 +24,7 @@ const Project = (data) => {
                 <h4 className="font-semibold">Used stack</h4>
                 <div className=" sm:flex my-8">
                   {stack.map((e) => (
-                    <button className="bg-white basis-1/6 md:basis-1/5 my-2 shadow-md py-2 px-4 md:px-8  text-sm md:text-md rounded-md text-center">
+                    <button className="bg-white m-2 basis-1/6 md:basis-1/5 my-2 shadow-md py-2 px-4 md:px-8  text-sm md:text-md rounded-md text-center">
                       {e}
                     </button>
                   ))}

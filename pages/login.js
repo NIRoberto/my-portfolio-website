@@ -20,7 +20,7 @@ const login = () => {
           <label htmlFor="email">Email</label>
           <input
             type="email"
-            className="border-2  border-main rounded-sm p-1 my-4"
+            className="border-2  outline-none border-main rounded-md p-1 my-4"
             placeholder="Enter email here..."
           />
         </div>
@@ -29,19 +29,19 @@ const login = () => {
           <input
             type="password"
             placeholder="Enter password here.."
-            className="border-2  border-main rounded-sm p-1 my-4"
+            className="border-2 outline-none  border-main rounded-md p-1 my-4"
             name="password"
           />
         </div>
         <div className="mb-8">
-          <button className="bg-main mt-2  p-1 outline-none border-none text-white text-center w-full rounded-sm">
+          <button className="bg-main mt-2  p-1 outline-none border-none text-white text-center w-full rounded-md">
             Login
           </button>
         </div>
         <div>
           <p className="text-sm">
             Create account
-            <Link className="text-blue-900  font-semibold px-2" href="/register">
+            <Link className="text-main  font-semibold px-2" href="/register">
               here
             </Link>
             if you don't have

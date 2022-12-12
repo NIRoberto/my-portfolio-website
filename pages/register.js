@@ -21,7 +21,7 @@ const register = () => {
             <label htmlFor="email">Full name</label>
             <input
               type="name"
-              className="border-2  border-main rounded-sm p-1 my-4"
+              className="border-2  border-main rounded-md outline-none p-1 my-4"
               placeholder="Enter email here..."
               name="name"
             />
@@ -30,7 +30,7 @@ const register = () => {
             <label htmlFor="email">Email</label>
             <input
               type="email"
-              className="border-2  border-main rounded-sm p-1 my-4"
+              className="border-2  outline-none border-main rounded-md p-1 my-4"
               placeholder="Enter email here..."
               name="email"
             />
@@ -40,19 +40,19 @@ const register = () => {
             <input
               type="password"
               placeholder="Enter password here.."
-              className="border-2  border-main rounded-sm p-1 my-4"
+              className="border-2 outline-none  border-main rounded-md p-1 my-4"
               name="password"
             />
           </div>
           <div className="mb-8">
-            <button className="bg-main mt-2  p-1 outline-none border-none text-white text-center w-full rounded-sm">
+            <button className="bg-main mt-2  p-1 outline-none border-none text-white text-center w-full rounded-md">
               Register
             </button>
           </div>
           <div>
             <p className="text-sm">
               Login
-              <Link className="text-blue-900  font-semibold px-2" href="/login">
+              <Link className="text-main  font-semibold px-2" href="/login">
                 here
               </Link>
               if you have account
