@@ -4,9 +4,9 @@ import { FaFigma, FaHtml5, FaJava, FaNodeJs, FaReact } from "react-icons/fa";
 const Skill = ({ skills }) => {
   return (
     <>
-      {skills.map(({ stack, year, projects, icon }) => {
+      {skills.map(({ id,stack, year, projects, icon }) => {
         return (
-          <div className="flex w-3/5 bg-white shadow-lg justify-between px-8 py-4   ">
+          <div  key={id} className="flex w-3/5 bg-white shadow-lg justify-between px-8 py-4   ">
             <div className="flex flex-col mr-4 justify-center">
               <span className="font-semibold text-sm">{stack}</span>
               <span className="text-" style={{ fontSize: "10px" }}>

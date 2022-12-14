@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const Blog = ({ data }) => (
   <>
-    {data.map(({ image, date, description, title }) => {
+    {data.map(({id, image, date, description, title }) => {
       return (
-        <div className="bg-white   basis-11/12 sm:basis-2/5 md:basis-1/3  rounded-md hover:shadow-lg flex flex-col shadow-md">
+        <div key={id} className="bg-white   basis-11/12 sm:basis-2/5 md:basis-1/3  rounded-md hover:shadow-lg flex flex-col shadow-md">
           <div className="basis-2/3">
             <img
               className="h-80  object-cover"
@@ -15,7 +15,7 @@ const Blog = ({ data }) => (
             />
           </div>
           <div className="p-4 basis-1/3 ">
-            <div class="date">
+            <div >
               <span style={{ fontSize: "10px" }}>{date}</span>
             </div>
             <div className="pb-4">

@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.10",
+    "formik": "^2.2.9",
     "next": "13.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.7.1"
+    "react-hook-form": "^7.40.0",
+    "react-icons": "^4.7.1",
+    "yup": "^0.32.11",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

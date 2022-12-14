@@ -18,7 +18,9 @@ import Nav from "../components/Nav";
 
 export default function Home() {
   const [r, setR] = useState(true);
-  const [menu, setMenu] = useState(false);
+  const [act, setAct] = useState(false);
+  const [projects, setProject] = useState(project);
+
 
   return (
     <div className="m-o p-0  box-border">
@@ -230,19 +232,45 @@ export default function Home() {
             My Projects
           </h2>
         </div>
-        <div id="portfolio" class="projects">
-          <div className="flex text-md  md:text-lg m-20">
-            <button className="">All</button>
-            <button className="ml-8">Webistes</button>
-            <button className="ml-8">Mobile</button>
-            <button className="ml-8">Games</button>
+        <div id="portfolio" className="projects">
+          <div onClick={()=> setAct(true)} className="flex text-md  md:text-lg m-20">
+            <button
+              className="cursor-pointer"
+              onClick={() => setProject(project)}
+            >
+              All
+            </button>
+            <button
+              className="ml-8"
+              onClick={() =>
+                setProject(project.filter((e) => e.category === "website"))
+              }
+            >
+              Webistes
+            </button>
+            <button
+              className="ml-8"
+              onClick={() =>
+                setProject(project.filter((e) => e.category === "mobile"))
+              }
+            >
+              Mobile
+            </button>
+            {/* <button
+              className="ml-8"
+              onClick={() =>
+                setProject(project.filter((e) => e.category === "game"))
+              }
+            >
+              Games
+            </button> */}
           </div>
           <div className="flex flex-col  gap-8">
-            <Project data={project} />
+            <Project data={ act ? projects:project} />
           </div>
         </div>
 
-        <div id="blog" class="blogs">
+        <div id="blog" className="blogs">
           <div>
             <h2 className=" text-2xl md:text-4xl m-10 md:m-20 my-20 text-orange-400  font-semibold ">
               Latest blogs
