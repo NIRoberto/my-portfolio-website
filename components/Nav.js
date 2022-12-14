@@ -10,10 +10,9 @@ const Nav = () => {
   return (
     <header
       style={{
-        background: " rgb(233,118,53)",
-
+        // background: "rgb(2,0,36)",
         // background:
-        //   "linear-gradient(90deg, rgba(233,118,53,1) 57%, rgba(239,160,126,1) 80%)",
+        //   "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(236,111,102,1) 0%, rgba(243,161,131,1) 100%)",
       }}
       className="flex bg-gradient bg-main relative text-white justify-between p-7"
     >

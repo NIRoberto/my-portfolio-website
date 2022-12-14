@@ -90,19 +90,34 @@ const Footer = () => {
             <span>Huye,Southern Rwanda</span>
           </div>
           <div className="flex my-4  ">
-            <span>
-              <FaFacebookSquare className="text-2xl cursor-pointer  mr-4" />
-            </span>
-            <span>
-              <FaGithubSquare className="text-2xl cursor-pointer mr-4" />
-            </span>
-            <span>
-              <FaLinkedin className="text-2xl  cursor-pointer  mr-4" />
-            </span>
+            <a
+              className="cursor-pointer text-white no-underline"
+              href="https://www.facebook.com/roberto.will.906/"
+            >
+              <span>
+                <FaFacebookSquare className="text-2xl cursor-pointer  mr-4" />
+              </span>
+            </a>
+            <a
+              className="cursor-pointer text-white no-underline"
+              href="https://github.com/niRoberto"
+            >
+              <span>
+                <FaGithubSquare className="text-2xl cursor-pointer mr-4" />
+              </span>
+            </a>
+            <a
+              className="cursor-pointer text-white no-underline"
+              href="https://www.linkedin.com/in/robert-niyitanga-83008a1b9/"
+            >
+              <span>
+                <FaLinkedin className="text-2xl  cursor-pointer  mr-4" />
+              </span>
+            </a>
           </div>
         </div>
       </footer>
-      <div className="text-center  text-xs md:text-lg bg-main p-4 text-white">
+      <div className="text-center  text-xs md:text-md bg-main p-4 text-white">
         <p>Copyright © 2022 All rights reserved | by Robert Niyitanga</p>
       </div>
     </>

@@ -30,7 +30,7 @@ const Project = (data) => {
                   ))}
                 </div>
                 <div className="text-right  text-blue-600 m-0">
-                  <a href="#">lorem.com</a>
+                  <a href={link} target="_blank">Visit</a>
                 </div>
               </div>
             </div>

@@ -34,9 +34,9 @@ export default function Home() {
       <main className="">
         <div
           style={{
-            background: " rgb(233,118,53)",
+            // background: " rgb(2,0,36)",
             // background:
-            //   "linear-gradient(90deg, rgba(233,118,53,1) 57%, rgba(239,160,126,1) 80%)",
+              // "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(236,111,102,1) 0%, rgba(243,161,131,1) 100%)",
           }}
           className="bg-main p-2    md:py-16  flex flex-col  md:flex-row items-center"
         >
@@ -228,12 +228,15 @@ export default function Home() {
           <Skill skills={skills} />
         </div>
         <div>
-          <h2 className=" text-2xl md:text-4xl m-20 my-20 text-orange-400  font-semibold">
+          <h2 className=" text-2xl md:text-4xl m-20 my-20 text-main  font-semibold">
             My Projects
           </h2>
         </div>
         <div id="portfolio" className="projects">
-          <div onClick={()=> setAct(true)} className="flex text-md  md:text-lg m-20">
+          <div
+            onClick={() => setAct(true)}
+            className="flex text-md  md:text-lg m-20"
+          >
             <button
               className="cursor-pointer"
               onClick={() => setProject(project)}
@@ -266,13 +269,13 @@ export default function Home() {
             </button> */}
           </div>
           <div className="flex flex-col  gap-8">
-            <Project data={ act ? projects:project} />
+            <Project data={act ? projects : project} />
           </div>
         </div>
 
         <div id="blog" className="blogs">
           <div>
-            <h2 className=" text-2xl md:text-4xl m-10 md:m-20 my-20 text-orange-400  font-semibold ">
+            <h2 className=" text-2xl md:text-4xl m-10 md:m-20 my-20 text-main  font-semibold ">
               Latest blogs
             </h2>
           </div>
