@@ -9,17 +9,19 @@ const Nav = () => {
 
   return (
     <header
-      style={{
-        // background: "rgb(2,0,36)",
-        // background:
-        //   "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(236,111,102,1) 0%, rgba(243,161,131,1) 100%)",
-      }}
+      // style={{
+       
+      //       background: " rgb(2,0,36)",
+      //       background:
+      //       "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,216,155,1) 0%, rgba(25,84,123,1) 100%)",
+          
+      // }}
       className="flex bg-gradient bg-main relative text-white justify-between p-7"
     >
       <div className="hidden  md:block">
         <ul className="flex">
           <li className="ml-8">
-            <Link href="/index">Home</Link>
+            <Link href="/">Home</Link>
           </li>
           <li className="ml-8">
             <a href="#about">About</a>
@@ -40,7 +42,7 @@ const Nav = () => {
           nav ? "hidden" : "block"
         } absolute ease-in-out anim bottom-0 top-0 right-0 `}
       >
-        <ul className="flex flex-col p-8 shadow-2xl w-60 bg-white text-main ">
+        <ul className="flex flex-col p-8 shadow-2xl w-60 bg-whit text-main ">
           <li className="m-8">
             <Link href="/">Home</Link>
           </li>
