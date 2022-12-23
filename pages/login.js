@@ -15,6 +15,8 @@ const login = () => {
         action="#"
         className="bg-white  p-8  mb-16 md:w-96 flex flex-col shadow-md rounded-sm"
       >
+
+        <Link className="bg-main rounded-md py-1  px-8  text-center text-white text-sm" href="/">Back to Home</Link>
         <h1 className="text-2xl font-semibold my-8">Welcome back!</h1>
         <div className="flex-col flex">
           <label htmlFor="email">Email</label>
@@ -34,9 +36,11 @@ const login = () => {
           />
         </div>
         <div className="mb-8">
+          {/* <Link  href="/dashboard"> */}
           <button className="bg-main mt-2  p-2 outline-none border-none text-white text-center w-full rounded-md">
             Login
           </button>
+          {/* </Link> */}
         </div>
         <div>
           <p className="text-sm">

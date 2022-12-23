@@ -9,7 +9,7 @@ import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
   const schema = yup.object().shape({
     name: yup.string().required(),
     email: yup.string().email().required(),
-    message: yup.string().required(),
+    message: yup.string().min(10).max(100).required(),
   });
 const Footer = () => {
   const {
@@ -27,8 +27,15 @@ const Footer = () => {
 }
   return (
     <>
-      <footer className="bg-main p-16 w-full text-white flex  flex-col md:flex-row  justify-between items-center">
-        <div className=" basis-5/6 md:basis-3/6   md:border-r-4  border-white rounded-md  px-4 md:px-8">
+      <footer
+        // style={{
+        //   background: " rgb(2,0,36)",
+        //   background:
+        //     "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,216,155,1) 0%, rgba(25,84,123,1) 100%)",
+        // }}
+        className="bg-main p-8 md:p-16 w-full text-white flex  flex-col md:flex-row  justify-between items-center"
+      >
+        <div className=" basis-11/12 md:basis-3/6  border- w-full  md:border-r-4  border-white rounded-md  px-2 md:px-8">
           <h1 className="text-4xl font-semibold py-2  px-4">Get in Touch</h1>
           <form onSubmit={handleSubmit(submitform)} className=" text-black p-4">
             {/* <div className="flex px-4 justify-around w-full"> */}
@@ -76,22 +83,23 @@ const Footer = () => {
             </div>
           </form>
         </div>
-        <div className="basis-3/6 px-10 ">
-          <div className="flex flex-col">
-            <span className="font-semibold py-2 text-md">Phone</span>
-            <span>+250787491277</span>
+        <div className="basis-full w-full md:basis-3/6 px-8 md:px-10 ">
+          <div className="flex justify-between items-center md:items-start md:flex-col">
+            <span className="font-semibold py-2 text-md">Phone:</span>
+            <span className="">+250787491277</span>
           </div>
-          <div className="flex flex-col">
-            <span className="font-semibold py-2 text-md">Email</span>
+          <div className="flex justify-between items-center  md:items-start md:flex-col">
+            <span className="font-semibold py-2 text-md">Email:</span>
             <span>robertwilly668@gmail.com</span>
           </div>
-          <div className="flex flex-col">
-            <span className="font-semibold py-2 text-md">Address: </span>
+          <div className="flex justify-between items-center md:items-start md:flex-col">
+            <span className="font-semibold py-2 text-md">Address:</span>
             <span>Huye,Southern Rwanda</span>
           </div>
           <div className="flex my-4  ">
             <a
               className="cursor-pointer text-white no-underline"
+              target="_blank"
               href="https://www.facebook.com/roberto.will.906/"
             >
               <span>
@@ -100,6 +108,7 @@ const Footer = () => {
             </a>
             <a
               className="cursor-pointer text-white no-underline"
+              target="_blank"
               href="https://github.com/niRoberto"
             >
               <span>
@@ -108,6 +117,7 @@ const Footer = () => {
             </a>
             <a
               className="cursor-pointer text-white no-underline"
+              target="_blank"
               href="https://www.linkedin.com/in/robert-niyitanga-83008a1b9/"
             >
               <span>
@@ -117,7 +127,14 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="text-center  text-xs md:text-md bg-main p-4 text-white">
+      <div
+        // style={{
+        //   background: " rgb(2,0,36)",
+        //   background:
+        //     "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,216,155,1) 0%, rgba(25,84,123,1) 100%)",
+        // }}
+        className="text-center bg-main  text-xs md:text-md  p-4 text-white"
+      >
         <p>Copyright © 2022 All rights reserved | by Robert Niyitanga</p>
       </div>
     </>

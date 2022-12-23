@@ -36,7 +36,7 @@ const project = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eligendi distinctio aliquid odio nostrum architecto sed sequi iusto, hic iure quia, vitae animi tempore eius pariatur doloribus, debitis et quasi.",
     stack: ["React", "Redux", "Tailwindcss", "Nodejs", "Postgres"],
     link: "http://website-admin-dashboard-git-develop-niroberto.vercel.app",
-    category: "webiste",
+    category: "website",
   },
   {
     id: 4,
