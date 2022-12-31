@@ -1,3 +1,6 @@
+
+import  {useState}  from "react";
+
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
@@ -5,15 +8,18 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import * as yup from "yup";
 import { useRouter } from "next/router";
-
+import { useAuth } from "../context/AuthContext";
 const schema = yup.object().shape({
-  name: yup.string().required(),
+  // name: yup.string().required(),
   email: yup.string().email().required(),
-  password: yup.string().min(4).max(12).required(),
+  password: yup.string().min(6).max(12).required(),
 });
-
 const register = () => {
   const router = useRouter();
+
+  const [message, setMessage] = useState  ("");
+
+  const { signup } = useAuth();
 
   const {
     register,
@@ -23,10 +29,17 @@ const register = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const submitform = (data) => {
-    reset();
-    if (data) {
-      router.push("/dashboard");
+  const submitform = async ({email,password}) => {
+    if (email && password) {
+      try {
+        await  signup(email,password);
+        router.push("/login");
+      } catch (error) {
+          console.log(error.message);
+          let str =error.message.replaceAll("-"," ");
+          setMessage(str.replace().slice(22,str.length - 2));
+          console.log(message);
+      }
     }
   };
   return (
@@ -51,7 +64,7 @@ const register = () => {
             Back to Home
           </Link>
           <h1 className="text-2xl font-semibold my-8">Create an account</h1>
-          <div className="flex-col flex">
+          {/* <div className="flex-col flex">
             <label htmlFor="name">Full name</label>
             <input
               type="name"
@@ -61,7 +74,7 @@ const register = () => {
               {...register("name")}
             />
             <span className="text-sm text-red-500">{errors.name?.message}</span>
-          </div>
+          </div> */}
           <div className="flex-col flex">
             <label htmlFor="email">Email</label>
             <input
@@ -73,6 +86,7 @@ const register = () => {
             />
             <span className="text-sm text-red-500">
               {errors.email?.message}
+              {message}
             </span>
           </div>
           <div className="flex-col flex">

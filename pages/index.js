@@ -18,6 +18,7 @@ import blog from "../components/data/blog";
 import Link from "next/link";
 import Nav from "../components/Nav";
 
+
 export default function Home() {
   const [r, setR] = useState(true);
   const [active, setActive] = useState(true);

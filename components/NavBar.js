@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
+import { useAuth } from "../context/AuthContext";
 
 const NavBar = () => {
   const [drop, setDrop] = useState(false);
+  const router = useRouter();
+
+  const { logout} = useAuth();
 
   return (
     <div className="flex bg bg-white  shadow-md p-6 justify-between">
@@ -25,8 +30,16 @@ const NavBar = () => {
             <li className="hover:bg-slate-100  w-32">
               <a href="">Profile</a>
             </li>
-            <li className="hover:bg-slate-100  w-32">
-              <a href="">Logout</a>
+            <li
+              className="hover:bg-slate-100  w-32"
+              onClick={() => {
+                logout();
+                setTimeout(() => {
+                  router.push("/login");
+                }, 6000);
+              }}
+            >
+              <button>Logout</button>
             </li>
           </ul>
         </div>

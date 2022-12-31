@@ -2,19 +2,20 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { RxCross1 } from "react-icons/rx";
-
+import { useAuth } from "../context/AuthContext";
 
 const Nav = () => {
   const [nav, setNav] = useState(true);
 
+  const { currentUser } = useAuth();
   return (
     <header
       // style={{
-       
+
       //       background: " rgb(2,0,36)",
       //       background:
       //       "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,216,155,1) 0%, rgba(25,84,123,1) 100%)",
-          
+
       // }}
       className="flex bg-gradient bg-main relative text-white justify-between p-7"
     >
@@ -72,14 +73,18 @@ const Nav = () => {
         )}
       </div>
 
-      <div>
-        <Link
-          href="/login"
-          className="bg-white px-8 py-2 hover:bg-orange-100 hover:text-main text-main outline-none border-none  rounded-md"
-        >
-          Login
-        </Link>
-      </div>
+      {currentUser ? (
+        <></>
+      ) : (
+        <div>
+          <Link
+            href="/login"
+            className="bg-white px-8 py-2 hover:bg-orange-100 hover:text-main text-main outline-none border-none  rounded-md"
+          >
+            Login
+          </Link>
+        </div>
+      )}
     </header>
   );
 };

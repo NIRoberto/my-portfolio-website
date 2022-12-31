@@ -20,7 +20,7 @@ const Footer = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  console.log(errors);
+  // console.log(errors);
   const submitform = (data) => {
     alert("Message send successfully");
     reset();
