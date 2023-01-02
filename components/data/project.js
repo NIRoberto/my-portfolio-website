@@ -41,13 +41,13 @@ const project = [
   {
     id: 4,
     image:
-      "https://res.cloudinary.com/nrob/image/upload/v1671057777/calc_bkt4jo.png",
-    title: "Calculator app",
+      "https://res.cloudinary.com/nrob/image/upload/v1672983578/ojs5sgdtc8n2vwecijth.png",
+    title: "Calculator and Todo apps",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eligendi distinctio aliquid odio nostrum architecto sed sequi iusto, hic iure quia, vitae animi tempore eius pariatur doloribus, debitis et quasi.",
-    stack: ["Java", "Android studio",],
-    link: "https://simple-calculator-9.netlify.app/",
-    category: "mobile",
+    stack: ["HTML", "CSS", "JavaScript"],
+    link: "https://tangerine-rugelach-bf4cb5.netlify.app/",
+    category: "other",
   },
 ];
 

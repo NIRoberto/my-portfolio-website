@@ -43,7 +43,7 @@ const Nav = () => {
           nav ? "hidden" : "block"
         } absolute ease-in-out anim bottom-0 top-0 right-0 `}
       >
-        <ul className="flex flex-col p-8 shadow-2xl w-60 bg-whit text-main ">
+        <ul className="flex flex-col p-8 shadow-2xl w-60 bg-main  border border-white text-white ">
           <li className="m-8">
             <Link href="/">Home</Link>
           </li>

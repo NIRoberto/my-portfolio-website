@@ -16,6 +16,8 @@ const login = () => {
     email: yup.string().required(),
     password: yup.string().required(),
   });
+
+  
   const router = useRouter();
   const [message, setMessage] = useState("");
 
@@ -45,9 +47,9 @@ const login = () => {
         <div
           className="h-screen flex justify-center items-center"
           style={{
-            background: " rgb(233,118,53)",
-            background:
-              "linear-gradient(90deg, rgba(233,118,53,1) 57%, rgba(239,160,126,1) 80%)",
+            background: " #152238",
+            // background:
+              // "linear-gradient(90deg, rgba(233,118,53,1) 57%, rgba(239,160,126,1) 80%)",
           }}
         >
           <form
