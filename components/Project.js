@@ -6,9 +6,17 @@ const Project = (data) => {
   // const { image, title, description, stack, link } = data.data;
   return (
     <>
-      {data.data.map(({id, image, title, description, stack, link }) => {
+      {data.data.map(({ id, image, title, description, stack, link }) => {
         return (
-          <motion.div layout animate={{opacity:1,scale:1}} initial={{opacity:0,scale:0}} exit={{scale:0,opacity:0}}  transition={{duration:1}}  key={id} className="flex  flex-col lg:flex-row bg-whit h-full gap-8 rounded-md shadow-md  mx-8 md:mx-20">
+          <motion.div
+            layout
+            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ duration: 1 }}
+            key={id}
+            className="flex  flex-col lg:flex-row bg-whit h-full gap-8 rounded-md shadow-md  mx-8 md:mx-20"
+          >
             <div className="basis-2/5 ">
               <img
                 className="h-full object-cover"
@@ -31,7 +39,13 @@ const Project = (data) => {
                   ))}
                 </div>
                 <div className="text-right  text-main  m-0">
-                  <a className="bg-white rounded-md p-2" href={link} target="_blank">Visit</a>
+                  <a
+                    className="bg-white rounded-md p-2"
+                    href={link}
+                    target="_blank"
+                  >
+                    Visit
+                  </a>
                 </div>
               </div>
             </div>

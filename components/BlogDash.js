@@ -1,13 +1,23 @@
 // import React from 'react'
 
-const BlogDash = ({ data }) => {
+import { deleteDoc, doc } from "firebase/firestore";
+import { db } from "../firebase";
+
+const BlogDash = ({ data, i }) => {
   console.log(data);
-  const { id, title, date, description } = data;
+  const { title, date, description, id } = data;
   console.log(title);
+
+  const handleDeletingBlog = async (i) => {
+    if (confirm("Are you sure you want to delete this query?") == true) {
+      await deleteDoc(doc(db, "blogs", i));
+    } else {
+    }
+  };
 
   return (
     <>
-      <td className="px-4 font-bold py-2">{id}</td>
+      <td className="px-4 font-bold py-2">{i}</td>
       <td className="text-sm p-8">
         {title.length > 20 ? title.slice(0, 20) + "..." : title}
       </td>
@@ -17,7 +27,10 @@ const BlogDash = ({ data }) => {
         <button className="bg-white p-2 text-main shadow-md rounded-md text-xs ">
           Edit
         </button>
-        <button className="bg-red-800 p-2 shadow-md rounded-md text-white text-xs">
+        <button
+          className="bg-red-800 p-2 shadow-md rounded-md text-white text-xs"
+          onClick={() => handleDeletingBlog(id)}
+        >
           Delete
         </button>
       </td>

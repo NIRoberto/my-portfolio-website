@@ -2,32 +2,55 @@ import React from "react";
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-
+import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { db } from "../firebase";
 import * as yup from "yup";
 import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
-  const schema = yup.object().shape({
-    name: yup.string().required(),
-    email: yup.string().email().required(),
-    message: yup.string().min(10).max(100).required(),
-  });
+const schema = yup.object().shape({
+  name: yup.string().required(),
+  email: yup.string().email().required(),
+  message: yup.string().min(10).max(10000).required(),
+});
 const Footer = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm({
     resolver: yupResolver(schema),
   });
   // console.log(errors);
-  const submitform = (data) => {
-    alert("Message send successfully");
-    reset();
-}
+  const submitform = async ({ name, email, message }) => {
+    try {
+      let id = Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+      const date = new Date();
+      let day = date.getDate();
+      let month = date.getMonth() + 1;
+      let year = date.getFullYear();
+
+      await addDoc(collection(db, "queries"), {
+        id: id,
+        name: name,
+        email: email,
+        date: `${day} / ${month} / ${year}`,
+        message: message,
+      });
+
+      reset();
+      alert("Message send successfully");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <footer
+        id="contact"
         // style={{
         //   background: " rgb(2,0,36)",
         //   background:
@@ -46,10 +69,12 @@ const Footer = () => {
               <input
                 type="text"
                 name="name"
-                className=" py-2  outline-none  border-none px-2 rounded-md"
+                className={`${
+                  errors.name ? "border-2 border-red-500" : "border-none"
+                } py-2  outline-none   px-2 rounded-md`}
                 {...register("name")}
               />
-              <span className="text-white ">{errors.name?.message}</span>
+              <span className="text-red-500 ">{errors.name?.message}</span>
             </div>
             <div className="flex   outline-none  border-none flex-col">
               <label className="py-2 text-white" htmlFor="Email">
@@ -58,10 +83,12 @@ const Footer = () => {
               <input
                 type="text"
                 name="email"
-                className=" py-2 text-gray-500 outline-none  border-none px-2 rounded-md"
+                className={`${
+                  errors.email ? "border-2 border-red-500" : "border-none"
+                } py-2  outline-none   px-2 rounded-md`}
                 {...register("email")}
               />
-              <span className="text-white ">{errors.email?.message}</span>
+              <span className="text-red-500  ">{errors.email?.message}</span>
             </div>
             {/* </div> */}
             <div className="flex flex-col  outline-none   border-none  rounded-md  py-2">
@@ -69,15 +96,16 @@ const Footer = () => {
                 Message
               </label>
               <textarea
-                className="h-32 p-2 text-black outline-none border-none  rounded-md"
                 name="message"
-                id="message"
+                className={`${
+                  errors.message ? "border-2 border-red-500" : "border-none"
+                } py-2  outline-none   h-28 px-2 rounded-md`}
                 {...register("message")}
               ></textarea>
-              <span className="text-white ">{errors.message?.message}</span>
+              <span className="text-red-500  ">{errors.message?.message}</span>
             </div>
             <div className="">
-              <button className="rounded-md mt-4 w-full py-2 bg-white text-center text-orange-400 outline-none  border-none px-8">
+              <button className="rounded-md mt-4 w-full py-2 bg-white text-center text-main outline-none  border-none px-8">
                 Send message
               </button>
             </div>

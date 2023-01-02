@@ -1,13 +1,84 @@
 // import React from 'react'
 
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { db } from "../firebase";
 import BlogDash from "./BlogDash";
 import blog from "./data/blog";
+import { useAuth } from "../context/AuthContext";
+import useFetchBlog from "./data/fetchBlogs";
 
+const schema = yup.object().shape({
+  image: yup.mixed().test("required", "Choose an Image for blog", (value) => {
+    return value && value.length;
+  }),
+  title: yup.string().required(),
+  // date: yup.string().required(),
+  body: yup.string().min(10).max(10000).required(),
+});
+
+// const  loggedUser  =
 const Content = () => {
-  const [tab, setTab] = useState(true);
+  const { currentUser } = useAuth();
+  const [tab, setTab] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const [files, setFile] = useState("");
+  // const [all, setAll] = useState([]);
+
+  const { blogs } = useFetchBlog();
+
+  // const { id } = blogs;
+  // console.log(id);
+
+  // setAll(blogs);
+
+  console.log(blogs);
+  const submitform = async ({ image, title, date, body }) => {
+    try {
+      const formData = new FormData();
+      formData.append("file", image[0]);
+      formData.append("upload_preset", "umunyarwanda");
+      await fetch("https://api.cloudinary.com/v1_1/nrob/image/upload", {
+        method: "POST",
+        body: formData,
+      })
+        .then((r) => r.json())
+        .then((res) => {
+          setFile(res.url);
+        })
+        .catch((e) => {});
+      let id = Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+      const date = new Date().toDateString();
+
+      await addDoc(collection(db, "blogs"), {
+        id: id,
+        image: files,
+        title: title,
+        date: `${date}`,
+        description: body,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    reset();
+  };
+
   return (
-    <div className="bg-orange-50 flex flex-col items-center p-16 min-h-screen">
+    <div className="bg-orange-50 flex flex-col   w-full p-16 min-h-screen">
       <div className="text-white flex gap-4">
         <button
           onClick={() => setTab(false)}
@@ -35,9 +106,9 @@ const Content = () => {
               </tr>
             </thead>
             <tbody>
-              {blog.map((e, i) => (
+              {blogs.map((e, i) => (
                 <tr className="">
-                  <BlogDash key={e.id} id={i} data={e} />
+                  <BlogDash key={e.id} i={i} data={e} />
                 </tr>
               ))}
             </tbody>
@@ -45,10 +116,19 @@ const Content = () => {
         </div>
       ) : (
         <div className="">
-          <form className="flex p-8 bg-white rounded-md w-96 mt-8 flex-col gap-8">
+          <form
+            onSubmit={handleSubmit(submitform)}
+            className="flex p-8 bg-white shadow-md rounded-md w- mt-8 flex-col gap-8"
+          >
             <div className="flex flex-col gap-4">
               <label htmlFor="">Choose Image</label>
-              <input type="file" name="image" id="file" />
+              <input
+                type="file"
+                name="image"
+                {...register("image")}
+                id="file"
+              />
+              {/* <img src={files} alt="fdgthj" /> */}
             </div>
             <div className="flex flex-col gap-4">
               <label htmlFor="">Title</label>
@@ -56,29 +136,33 @@ const Content = () => {
                 type="text"
                 className="p-2 rounded-md outline-none border-2  w-full"
                 name="title"
+                {...register("title")}
                 id="title"
               />
             </div>
-            <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-col gap-4">
               <label htmlFor="">Date</label>
               <input
                 type="date"
                 className="p-2 rounded-md w-full border-2 outline-none"
                 name="date"
+                {...register("date")}
                 id="date"
               />
-            </div>
+            </div> */}
             <div className="flex  flex-col gap-4">
               <label htmlFor=""></label>
               <textarea
                 name="body"
                 id=""
-                className="w-full p-2 h-24 rounded-md border-2 outline-none"
-             
+                {...register("body")}
+                className="w-full p-2 h-32 rounded-md border-2 outline-none"
               ></textarea>
             </div>
             <div className="w-full">
-              <button className="text-center w-full p-2 rounded-md  text-white bg-main">Save</button>
+              <button className="text-center w-full p-2 rounded-md  text-white bg-main">
+                Save
+              </button>
             </div>
           </form>
         </div>

@@ -3,10 +3,12 @@ import Image from "next/image";
 import { FaFigma, FaHtml5, FaJava, FaNodeJs, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { FiMenu } from "react-icons/fi";
-
+import { BsCodeSlash } from "react-icons/bs";
+import { GrDeploy } from "react-icons/gr";
+import { SiAdobeindesign } from "react-icons/si";
+import { MdOutlineMobileFriendly } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 import profile from "/public/RObert.jpg";
-
 import React, { use, useState } from "react";
 import Footer from "../components/Footer";
 import Project from "../components/Project";
@@ -14,19 +16,20 @@ import Blog from "../components/Blog";
 import Skill from "../components/Skill";
 import skills from "../components/data/skills";
 import project from "../components/data/project";
-import blog from "../components/data/blog";
 import Link from "next/link";
 import Nav from "../components/Nav";
-
+import useFetchBlog from "../components/data/fetchBlogs";
 
 export default function Home() {
   const [r, setR] = useState(true);
   const [active, setActive] = useState(true);
   const [active1, setActive1] = useState(false);
   const [active2, setActive2] = useState(false);
-
   const [act, setAct] = useState(false);
   const [projects, setProject] = useState(project);
+  const { blogs } = useFetchBlog();
+
+  const newArr = blogs.filter((single, index) => index < 3);
 
   return (
     <div className="m-o p-0  box-border">
@@ -47,21 +50,22 @@ export default function Home() {
           }
         }
       >
-        <div className="bg-main p-2    md:py-16  flex flex-col  md:flex-row items-center">
+        <div className="bg-main p-2   mt-16 md:py-16  flex flex-col  md:flex-row items-center">
           <div className="flex justify-center md:justify-end">
             <Image
               className="w-3/4 md:w-2/3 h-3/4 shadow-md md:-mb-20  rounded-md "
               src={profile}
+              alt="image"
             ></Image>
           </div>
           <div className="flex  ml-8 flex-col  text-white ">
             <h2 className="text-2xl  md:text-5xl font-bold my-2">
-              Robert Nyitanga
+              Robert Niyitanga
             </h2>
             <p>Full stack developer</p>
             <div className="flex my-2 justify-between w-full md:w-4/5">
               <span className="font-semibold">Age:</span>
-              <span>20</span>
+              <span>{new Date().getFullYear() - 2002}</span>
             </div>
             <div className="flex my-2 justify-between  w-full md:w-4/5">
               <span className="font-semibold">Phone</span>
@@ -90,13 +94,13 @@ export default function Home() {
             scripting languages and multimedia Web tools.
           </p>
         </div>
-        <div className="">
-          <div className="flex justify-center m-8">
+        <div className="flex flex-col items-center ">
+          <div className="flex  justify-center m-8">
             <button
               onClick={() => setR(!r)}
               className={` py-2 px-4 md:px-8  ${
                 r ? "bg-white text-main" : " bg-main text-white"
-              } shadow-md hover:shadow-lg  rounded-md`}
+              } shadow-lg hover:shadow-lg  rounded-md`}
             >
               Experience
             </button>
@@ -109,14 +113,14 @@ export default function Home() {
               Education
             </button>
           </div>
-          <div className="flex flex-col  md:flex-row justify-center items-center">
+          <div className="flex flex-col w- border border-red-60  md:flex-row justify-center items-center">
             {r ? (
               <>
-                <div className="hidden md:flex md:border-r-4  h-96  p-8 flex-col justify-between border-main rounded-md  border-solid">
+                <div className="hidden md:flex basis-2/4 w-2/4 md:border-r-4  h-96  p-8 flex-col justify-between border-main rounded-md  border-solid">
                   <div className="hidden md:block">
-                    <p>
+                    <div>
                       19 <sup>th</sup> May 2021 - 19 <sup>th</sup> dec 2024
-                    </p>
+                    </div>
                   </div>
                   <div className="hidden md:block">
                     19 <sup>th</sup> jan 2017 - 19 <sup>th</sup> oct 2019
@@ -134,8 +138,7 @@ export default function Home() {
                   <div>
                     <h3 className="font-semibold">University of Rwanda</h3>
                     <ul className="list-disc mx-8 my-4 text-sm">
-                      <li>Gain Technical and profectional skills</li>
-                      <li>Gain Technical and profectional skills</li>
+                      <h4>BSc Hons , Computer engineering</h4>
                     </ul>
                   </div>
                   <div className=" block py-4 md:hidden">
@@ -144,8 +147,9 @@ export default function Home() {
                   <div>
                     <h3 className="font-semibold">Advanced secondary school</h3>
                     <ul className="list-disc mx-8 my-4 text-sm">
-                      <li>Gain Technical and profectional skills</li>
-                      <li>Gain Technical and profectional skills</li>
+                      <h4>
+                        Earn Certificate of Advanced diploma A <sub>2</sub>
+                      </h4>
                     </ul>
                   </div>
                   <div className="block py-4 md:hidden">
@@ -155,16 +159,15 @@ export default function Home() {
                     <h3 className="font-semibold">
                       ALX Software Engineering Internership
                     </h3>
-                    <ul className="list-disc mx-8 my-4 text-sm">
-                      <li>Gain Technical and profectional skills</li>
-                      <li>Gain Technical and profectional skills</li>
+                    <ul className="list mx-8 my-4 text-sm">
+                      <li>Gain low level C Programming skills</li>
                     </ul>
                   </div>
                 </div>
               </>
             ) : (
               <>
-                <div className="hidden md:flex  md:border-r-4  h-96  p-8 flex-col justify-between border-orange-500 rounded-md  border-solid">
+                <div className="hidden md:flex  md:border-r-4  h-96  p-8 flex-col justify-between border-main rounded-md  border-solid">
                   <div>
                     <p>
                       4 <sup>th</sup> April 2020 - 5<sup>th</sup> July 2021
@@ -192,8 +195,20 @@ export default function Home() {
                       Software engineering internership at Andela
                     </h3>
                     <ul className="list-disc mx-8 my-4 text-sm">
-                      <li>Gain Technical and profectional skills</li>
-                      <li>Gain Technical and profectional skills</li>
+                      <li>
+                        Gain the technical JavaScript skills like
+                        Problem-solving, testing, React and Nodejs , and
+                        Debugging skills.
+                      </li>
+                      <li>
+                        Gain professional skills like communication skills,
+                        leadership, problem-solving, and teamwork.
+                      </li>
+
+                      <li>
+                        We developed Real world application website as a team
+                        called barefoot nomad.
+                      </li>
                     </ul>
                   </div>
                   <div className="block py-4 md:hidden">
@@ -203,9 +218,11 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Romalice consulting Group</h3>
-                    <ul className="list-disc mx-8 my-4 text-sm">
-                      <li>Gain Technical and profectional skills</li>
-                      <li>Gain Technical and profectional skills</li>
+                    <ul className="list mx-8 my-4 text-sm">
+                      <li>
+                        Develop a Mobile application with the team using Flutter
+                        and Dart
+                      </li>
                     </ul>
                   </div>
                   <div className="block py-4 md:hidden">
@@ -235,6 +252,92 @@ export default function Home() {
         <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3  auto-cols-max place-items-center  gap-4">
           <Skill skills={skills} />
         </div>
+
+        <div>
+          <h2 className=" text-2xl md:text-4xl m-20 my-20 text-main  font-semibold">
+            Service I offer
+          </h2>
+        </div>
+        <div className="flex  flex-col md:flex-row flex-wrap items-center justify-between   p-8 ">
+          <div className="flex justify-center basis-4/5 sm:basis-2/4 lg:basis-3/12 flex-col items-center  p-4 rounded-md">
+            <BsCodeSlash className="text-7xl border-2  border-main p-4 rounded-md font-bold" />
+            <h1 className="text-lg font-bold">Web development</h1>
+            <div className="text-center text-xs p-2">
+              <ul className="list-none flex flex-col gap-4">
+                <li>
+                  Write well designed, testable, efficient code by using best
+                  software development practices.
+                </li>
+                <li>
+                  Create website layout/user interface by using standard
+                  HTML/CSS,React, Tailwindcss
+                </li>
+                <li>
+                  Integrate data from various back-end services and databases
+                </li>
+                <li>
+                  Developing or validating test routines and schedules to ensure
+                  that test cases mimic external interfaces and address all
+                  browser and device types
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex justify-center basis-4/5 sm:basis-2/4 lg:basis-3/12 flex-col items-center  p-10 rounded-md">
+            <SiAdobeindesign className="text-7xl border-2  border-main p-4 rounded-md font-bold" />
+            <h1 className="text-lg font-bold">UI and UX Design</h1>
+            <div className="text-center text-xs p-2">
+              <ul className="list-none flex flex-col gap-4">
+                <li>
+                  Producing high-quality UX design solutions through visual and
+                  graphic designs, flow diagrams, site maps, and prototype.
+                </li>
+                <li>
+                  Designing UI elements and tools such as navigation menus,
+                  search boxes, tabs, and widgets for our digital assets.
+                </li>
+                <li>
+                  Testing UI elements such as page layouts, page designs, page
+                  flows, and target links for landing pages.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex justify-center basis-4/5 sm:basis-2/4 lg:basis-3/12 flex-col items-center  p-4 rounded-md">
+            <GrDeploy className="text-7xl border-2  border-main p-4 rounded-md font-bold" />
+            <h1 className="text-lg font-bold">Web Hosting</h1>
+            <p className="text-center text-xs p-2">
+              <ul className="list-none flex flex-col gap-4">
+                <li>Publish your website files onto the internet.</li>
+                <li> Maintaining stable and secure storage spaces</li>
+              </ul>
+            </p>
+          </div>
+          <div className="flex justify-center basis-4/5 sm:basis-2/4 lg:basis-3/12 flex-col items-center  p-4 rounded-md">
+            <MdOutlineMobileFriendly className="text-7xl border-2  border-main p-4 rounded-md font-bold" />
+            <h1 className="text-lg font-bold">Mobile development</h1>
+            <div className="text-center text-xs p-2">
+              <ul className="list-none flex flex-col gap-4">
+                <li>
+                  Develop application programming interfaces APIs to support
+                  mobile functionality
+                </li>
+                <li>
+                  Suggest and implement new mobile products, applications and
+                  protocols
+                </li>
+                <li>
+                  Work closely with colleagues to constantly innovate app
+                  functionality and design
+                </li>
+                <li>
+                  Communicate with users to understand their needs and
+                  experiences
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <div>
           <h2 className=" text-2xl md:text-4xl m-20 my-20 text-main  font-semibold">
             My Projects
@@ -246,7 +349,9 @@ export default function Home() {
             className="flex text-md  md:text-lg m-20"
           >
             <button
-              className={`${active ? "text-main" : ""}  cursor-pointer`}
+              className={`${
+                active ? "bg-main py-2 px-4 rounded-md text-white" : ""
+              }  cursor-pointer`}
               onClick={() => {
                 setActive(true);
                 setActive1(false);
@@ -257,7 +362,9 @@ export default function Home() {
               All
             </button>
             <button
-              className={`${active1 ? "text-main" : ""} ml-8 cursor-pointer`}
+              className={`${
+                active1 ? "bg-main py-2 px-4 rounded-md text-white" : ""
+              } ml-8 cursor-pointer`}
               onClick={() => {
                 setActive(false);
                 setActive1(true);
@@ -268,15 +375,17 @@ export default function Home() {
               Webistes
             </button>
             <button
-              className={`${active2 ? "text-main" : ""} ml-8 cursor-pointer`}
+              className={`${
+                active2 ? "bg-main py-2 px-4 rounded-md text-white" : ""
+              } ml-8 cursor-pointer`}
               onClick={() => {
                 setActive(false);
                 setActive1(false);
                 setActive2(true);
-                setProject(project.filter((e) => e.category === "mobile"));
+                setProject(project.filter((e) => e.category === "other"));
               }}
             >
-              Mobile
+              others
             </button>
             {/* <button
               className="ml-8"
@@ -289,7 +398,7 @@ export default function Home() {
           </div>
           <motion.div layout className="flex flex-col  gap-8">
             <AnimatePresence>
-              <Project data={act ? projects : project} />
+              <Project  data={act ? projects : project} />
             </AnimatePresence>
           </motion.div>
         </div>
@@ -301,7 +410,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex flex-col  md:flex-row gap-8  p-8 md:p-20">
-            <Blog data={blog} />
+            <Blog data={newArr} />
           </div>
         </div>
       </main>
